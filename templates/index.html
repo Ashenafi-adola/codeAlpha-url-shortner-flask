@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>URL Shortener</title>
 </head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 <body>
-    <div>
-        <form action="" method="post">
+    <div class="container">
+        <form action="" method="post" class="url-form">
             <label for="original">Original URL: </label>
-            <input type="url" name="original" required placeholder="Enter Your Original Url"/>
-            <button type="submit">Submit</button>
+            <input type="url" name="original" required placeholder="Enter Your Original Url" class="url-input"/>
+            <button type="submit" class="submit-btn">Submit</button>
         </form>
-        <div>
+        <div class="short-url-section">
             {% if short_url %}
                 <p>Short URL: <a href="{{ short_url }}">{{ short_url }}</a></p>
             {% endif %}
         </div>
-        <div>
+        <div class="url-list-link">
             <p><a href="http://127.0.0.1:5000/url-list/">Shortend Urls</a></p>
         </div>
-        
     </div>
 </body>
 </html>

@@ -1,0 +1,106 @@
+.list-title {
+	text-align: center;
+	color: #007bff;
+	margin-bottom: 24px;
+}
+
+.urls-list-section {
+	margin-top: 18px;
+}
+
+.url-list-item {
+	background: #f1f8ff;
+	border-radius: 7px;
+	padding: 16px 14px 10px 14px;
+	margin-bottom: 18px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.url-list-item .url-id {
+	font-size: 1.1rem;
+	color: #333;
+	margin-bottom: 6px;
+}
+.url-list-item p {
+	margin: 4px 0;
+	word-break: break-all;
+}
+.url-list-item a {
+	color: #0056b3;
+	text-decoration: underline dotted;
+	transition: color 0.2s;
+}
+.url-list-item a:hover {
+	color: #d63384;
+}
+
+body {
+	background: #f7f7f7;
+	font-family: 'Segoe UI', Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	max-width: 400px;
+	margin: 60px auto;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+	padding: 32px 28px 24px 28px;
+}
+
+.url-form {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.url-input {
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 1rem;
+	transition: border 0.2s;
+}
+.url-input:focus {
+	border: 1.5px solid #007bff;
+	outline: none;
+}
+
+.submit-btn {
+	background: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 0;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+.submit-btn:hover {
+	background: #0056b3;
+}
+
+.short-url-section {
+	margin-top: 20px;
+	background: #e9f7ef;
+	border-radius: 5px;
+	padding: 10px;
+	text-align: center;
+	color: #155724;
+	font-weight: 500;
+}
+
+.url-list-link {
+	margin-top: 18px;
+	text-align: center;
+}
+.url-list-link a {
+	color: #007bff;
+	text-decoration: none;
+	font-weight: 500;
+	transition: text-decoration 0.2s;
+}
+.url-list-link a:hover {
+	text-decoration: underline;
+}

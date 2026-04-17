@@ -38,12 +38,15 @@ def index():
     if request.method == "POST":
         original_url = request.form['original']
         short_url = url_shortener(original_url)
-        new_url = UrlsStore(original_url=original_url, shortened_url=short_url)
-        try:
+        if short_url != None:
+            new_url = UrlsStore(original_url=original_url, shortened_url=short_url)
+            #try:
             db.session.add(new_url)
             db.session.commit()
-        except:
-            pass
+            # except:
+            #     pass
+        else:
+            print("No shortened url is returned")
     return render_template('index.html', short_url=short_url)
 
 @app.route("/url-list/")
@@ -58,6 +61,7 @@ def url_shortener(original_url):
     }
     try:
         response = requests.post(base_url, headers=headers, json={'long_url':original_url})
+
         if response.status_code == 200:
             return response.json()['link']
         else:

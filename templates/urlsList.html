@@ -5,23 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>urls-List</title>
 </head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 <body>
-    <div>
-        <h1>Shortened Url List</h1>
-        <div>
-            <a href="http://127.0.0.1:5000/">Add </a>
+    <div class="container">
+        <h1 class="list-title">Shortened Url List</h1>
+        <div class="url-list-link">
+            <a href="http://127.0.0.1:5000/">Add</a>
         </div>
         <hr>
+        <div class="urls-list-section">
         {% for url in urls %}
-            <div>
-                <div>
+            <div class="url-list-item">
+                <div class="url-id">
                     <strong>{{ url.id }}</strong>
                 </div>
                 <p>Original URL: <a href="{{ url.original_url }}">{{ url.original_url }}</a></p>
-                <p>shortened URL: <a href="{{ url }}">{{ url.shortened_url }}</a></p>
+                <p>Shortened URL: <a href="{{ url }}">{{ url.shortened_url }}</a></p>
                 <hr>
             </div>
         {% endfor %}
+        </div>
     </div>
 </body>
 </html>
