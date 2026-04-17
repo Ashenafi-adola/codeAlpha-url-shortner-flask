@@ -1,14 +1,18 @@
 from flask import Flask
 from flask import render_template, request
 import requests
+import os
+import dotenv
+
+dotenv.load_dotenv()
+
 
 app = Flask(__name__)
-ACCESS_TOKEN = "08bf2d660ee4a94367096f80127de64a7848cb91"
+ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN')
 
-
-name = "ashenafi"
 @app.route("/", methods=['POST', 'GET'])
 def index():
+    short_url = None
     if request.method == "POST":
         original_url = request.form['original']
         short_url = url_shortener(original_url)
